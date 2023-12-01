@@ -3,9 +3,7 @@ node {
     def dockerImage
     def dockerImageTag = "devopsexample${env.BUILD_NUMBER}"
     
-    stage('Clone Repo') {
-      git 'https://github.com/dominique-coder/Jenkins-Test.git'
-    }    
+      
   
     stage('Build Project') {
       sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"
