@@ -8,7 +8,7 @@ node {
     }    
   
     stage('Build Project') {
-      sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"
+      //sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"
     }
         
     stage('Build Docker Image') {
