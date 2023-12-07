@@ -18,6 +18,10 @@ node {
     
     stage('Deploy Docker Image'){
       	echo "Docker Image Tag Name: ${dockerImageTag}"
+	// suppression de devopsexample pour pouvoir utilisé ce nom à nouveau et voir les modification
+	sh 'docker stop devopsexample'
+        sh 'docker rm devopsexample'
+	    
 	sh "docker run --name devopsexample -d -p 2222:2222 devopsexample:${env.BUILD_NUMBER}"
     }
 }
