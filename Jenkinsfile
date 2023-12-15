@@ -4,6 +4,7 @@ node {
     def dockerImageTag = "devopsexample${env.BUILD_NUMBER}"
     
     stage('Clone Repo') {
+	emailext body: 'c\'est juste un teste', subject: 'CI/CD avec JENKINS', to: 'dominique.antoine.raz@gmail.com'
       git 'https://github.com/dominique-coder/Jenkins-Test.git'
     }    
   
